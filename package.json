@@ -19,25 +19,31 @@
     "*.css"
   ],
   "peerDependencies": {
+    "next": ">=13",
     "react": ">=18",
-    "react-dom": ">=18",
-    "next": ">=13"
+    "react-dom": ">=18"
   },
   "devDependencies": {
+    "@types/react": "^19.2.10",
+    "@types/react-dom": "^19.2.3",
     "typescript": "^5.4.0"
   },
-  
   "compilerOptions": {
     "jsx": "react-jsx",
-    "lib": ["DOM", "ES2020"],
-    "types": ["react", "react-dom"],
+    "lib": [
+      "DOM",
+      "ES2020"
+    ],
+    "types": [
+      "react",
+      "react-dom"
+    ],
     "declaration": true,
     "outDir": "dist",
     "emitDeclarationOnly": false
   },
-
-
   "scripts": {
-    "build": "tsc -p tsconfig.json && node ./scripts/copy-css.mjs"
+    "build": "tsc -p tsconfig.json && node ./scripts/copy-css.mjs",
+    "prepare": "npm run build"
   }
 }
