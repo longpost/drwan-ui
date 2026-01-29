@@ -7,4 +7,5 @@ export declare function Header(props: {
     taglineEn?: string;
     taglineZh?: string;
     onLangChange?: (lang: Lang) => void;
-}): import("react/jsx-runtime").JSX.Element;
+}): any;
+//# sourceMappingURL=Header.d.ts.map

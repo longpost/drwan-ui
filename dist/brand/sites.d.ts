@@ -25,3 +25,4 @@ export type NavItem = {
     href: string;
 };
 export declare function getNav(baseHref: string): NavItem[];
+//# sourceMappingURL=sites.d.ts.map
