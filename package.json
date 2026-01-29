@@ -26,6 +26,17 @@
   "devDependencies": {
     "typescript": "^5.4.0"
   },
+  
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "lib": ["DOM", "ES2020"],
+    "types": ["react", "react-dom"],
+    "declaration": true,
+    "outDir": "dist",
+    "emitDeclarationOnly": false
+  },
+
+
   "scripts": {
     "build": "tsc -p tsconfig.json && node ./scripts/copy-css.mjs"
   }

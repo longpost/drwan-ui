@@ -64,7 +64,8 @@ export function Header(props: {
         </a>
 
         <div className="drwan-navLinks" aria-label="Primary navigation">
-          {nav.map((it) => (
+          {nav.map((it: { key: string; href: string; labelEn: string; labelZh: string }) => (
+
             <a key={it.key} className="drwan-pill" href={it.href}>
               {pick(it.labelEn, it.labelZh)}
             </a>
