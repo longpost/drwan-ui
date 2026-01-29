@@ -1,8 +1,8 @@
 "use client";
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React from "react";
-import { getCookieSafe, setLangCookieSafe } from "../utils/lang";
-import { getNav } from "../brand/sites";
+import { getCookieSafe, setLangCookieSafe } from "../utils/lang.js";
+import { getNav } from "../brand/sites.js";
 export function Header(props) {
     const { baseHref = "", logoSrc, brandTitleEn = "DRWAN STUDIO", brandTitleZh = "DRWAN STUDIO", taglineEn = "A learning studio by Dr. Wan", taglineZh = "Dr. Wan 的学习工作室", onLangChange, } = props;
     const [lang, setLang] = React.useState("en");

@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import type { Lang } from "../utils/lang";
-import { getCookieSafe, setLangCookieSafe } from "../utils/lang";
-import { getNav } from "../brand/sites";
+import type { Lang } from "../utils/lang.js";
+import { getCookieSafe, setLangCookieSafe } from "../utils/lang.js";
+import { getNav } from "../brand/sites.js";
 
 export function Header(props: {
   baseHref?: string;         // "" on hub; "https://www.drwan.com" on subdomains

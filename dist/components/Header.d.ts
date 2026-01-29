@@ -1,4 +1,4 @@
-import type { Lang } from "../utils/lang";
+import type { Lang } from "../utils/lang.js";
 export declare function Header(props: {
     baseHref?: string;
     logoSrc?: string;
