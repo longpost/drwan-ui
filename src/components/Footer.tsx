@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import type { Lang } from "../utils/lang";
-import { getCookieSafe } from "../utils/lang";
+import type { Lang } from "../utils/lang.js";
+import { getCookieSafe } from "../utils/lang.js";
 
 export function Footer(props: {
   lang?: Lang;
