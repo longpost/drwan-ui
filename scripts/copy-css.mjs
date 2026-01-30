@@ -1,5 +1,16 @@
-import { mkdirSync, copyFileSync } from "node:fs";
-import { join } from "node:path";
+import fs from "fs";
+import path from "path";
 
-mkdirSync("dist", { recursive: true });
-copyFileSync(join("src","brand","theme.css"), join("dist","theme.css"));
+const srcDir = path.resolve("src/brand");
+const outDir = path.resolve("dist/brand");
+
+fs.mkdirSync(outDir, { recursive: true });
+
+for (const file of fs.readdirSync(srcDir)) {
+  if (file.endsWith(".css")) {
+    fs.copyFileSync(
+      path.join(srcDir, file),
+      path.join(outDir, file)
+    );
+  }
+}
