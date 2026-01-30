@@ -1,235 +1,112 @@
-/* =========================
-   DRWAN UI Theme (Style B)
-   Modern product / tool-site
-   ========================= */
-
 :root{
   --bg: #F6F8FB;
   --surface: #FFFFFF;
   --muted-surface: #EEF2F7;
 
-  --text: #111827;
+  --text: #1F2937;
   --muted: #6B7280;
 
-  --border: rgba(17,24,39,.10);
+  --border: #E5E7EB;
 
   --brand: #2563EB;
   --brand2: #0EA5A4;
-  --brandSoft: rgba(37,99,235,.08);
+  --brandSoft: #E0F2FE;
 
-  --shadow-sm: 0 1px 2px rgba(0,0,0,.05);
-  --shadow-md: 0 12px 28px rgba(0,0,0,.10);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.04);
+  --shadow-md: 0 10px 30px rgba(0,0,0,.10);
 
-  --radius-lg: 14px;
-  --radius-md: 10px;
-  --radius-pill: 999px;
+  --radius-lg: 16px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
 
-  --font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --maxw: 1100px;
+  --padx: 18px;
 }
 
-/* Optional: consumer apps can set body background themselves,
-   but providing defaults here makes it look good out-of-box. */
-html, body { height: 100%; }
+/* ===== Base ===== */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
 body{
-  margin: 0;
-  font-family: var(--font);
-  color: var(--text);
+  margin:0;
   background: var(--bg);
-}
-
-/* ---------- Header / Nav ---------- */
-.drwan-nav{
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(255,255,255,.92);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
-}
-
-.drwan-navInner{
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 12px 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 12px;
-}
-
-.drwan-brand{
-  display:flex;
-  align-items:center;
-  gap: 10px;
-  text-decoration: none;
-  color: inherit;
-  min-width: 240px;
-}
-
-.drwan-logoBox{
-  width: 34px;
-  height: 34px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--brand), var(--brand2));
-  box-shadow: 0 10px 22px rgba(37,99,235,.16);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-}
-
-/* If you pass logo image: keep it clean, not “black blob” */
-.drwan-logoBox img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* 如果你logo是黑的，打开这行立刻不黑： */
-  /* filter: grayscale(100%) contrast(.9); opacity:.92; */
-}
-
-.drwan-brandTitle{
-  display:flex;
-  flex-direction:column;
-  line-height: 1.05;
-}
-.drwan-brandTitle strong{
-  font-size: 13px;
-  letter-spacing: .14em;
-}
-.drwan-brandTitle span{
-  margin-top: 2px;
-  font-size: 12px;
-  color: var(--muted);
-}
-
-/* Nav links */
-.drwan-navLinks{
-  display:flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content:center;
-}
-
-.drwan-pill{
-  padding: 8px 12px;
-  border-radius: var(--radius-pill);
-  background: var(--muted-surface);
-  border: 1px solid var(--border);
   color: var(--text);
-  font-size: 13px;
-  text-decoration: none;
-  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  line-height: 1.55;
 }
-.drwan-pill:hover{
-  transform: translateY(-1px);
-  background: var(--brandSoft);
-  border-color: rgba(37,99,235,.25);
-}
+a{ color: inherit; text-decoration: none; }
+a:hover{ text-decoration: none; }
 
-/* Language buttons */
-.drwan-langBtns{
-  display:flex;
-  gap: 8px;
-}
-
-.drwan-btn{
-  padding: 8px 12px;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--border);
-  background: #fff;
-  cursor: pointer;
-  font-size: 13px;
-  transition: border-color .12s ease, background .12s ease, color .12s ease;
-}
-.drwan-btn:hover{
-  border-color: rgba(37,99,235,.35);
-}
-.drwan-btnActive{
-  border-color: rgba(37,99,235,.75);
-  color: var(--brand);
-  background: rgba(37,99,235,.06);
-}
-
-/* ---------- Footer ---------- */
-.drwan-footer{
-  max-width: 1100px;
+/* ===== Shared layout helpers ===== */
+.drwan-container{
+  max-width: var(--maxw);
   margin: 0 auto;
-  margin-top: 34px;
-  padding: 16px 18px 40px;
-  border-top: 1px solid var(--border);
+  padding: 20px var(--padx) 44px;
+}
+
+.drwan-content{
+  max-width: 980px;
+}
+.drwan-content p{
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.drwan-content .drwan-lead{
+  margin-top: 4px;
+  color: rgba(31,41,55,.78);
+}
+
+.drwan-sectionTitle{
+  margin: 26px 0 12px;
   display:flex;
+  align-items:baseline;
   justify-content:space-between;
   gap: 12px;
-  flex-wrap: wrap;
-  color: var(--muted);
+}
+.drwan-sectionTitle h2{
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: .02em;
+}
+.drwan-sectionTitle span{
   font-size: 12px;
+  color: var(--muted);
 }
 
-/* ---------- Mobile: header becomes 3 rows + horizontal scroll nav ---------- */
-@media (max-width: 720px){
-  .drwan-navInner{
-    flex-direction: column;
-    align-items: stretch;
-    gap: 8px;
-    padding: 10px 12px;
-  }
-
-  .drwan-brand{ min-width: 0; }
-
-  .drwan-brandTitle strong{ font-size: 15px; }
-  .drwan-brandTitle span{
-    font-size: 12px;
-    line-height: 1.3;
-    opacity: .85;
-  }
-
-  .drwan-navLinks{
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    -webkit-overflow-scrolling: touch;
-    padding: 6px 2px;
-  }
-  .drwan-navLinks::-webkit-scrollbar{ height: 0; }
-  .drwan-pill{ flex: 0 0 auto; }
-
-  .drwan-langBtns{
-    justify-content: flex-end;
-    gap: 6px;
-  }
-  .drwan-btn{ padding: 6px 10px; font-size: 12px; }
-}
-
+/* ===== Grid + Card (match drwan-home) ===== */
 .drwan-grid{
   display:grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
+  grid-template-columns: repeat(5, minmax(0,1fr));
   gap: 10px;
 }
-@media (max-width: 1100px){ .drwan-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); } }
-@media (max-width: 900px){ .drwan-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
-@media (max-width: 620px){ .drwan-grid{ grid-template-columns: 1fr; } }
+@media (max-width: 1100px){
+  .drwan-grid{ grid-template-columns: repeat(4, minmax(0,1fr)); }
+}
+@media (max-width: 900px){
+  .drwan-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+@media (max-width: 620px){
+  .drwan-grid{ grid-template-columns: 1fr; }
+}
 
+/* Card like drwan-home: blue tint + hover */
 .drwan-card{
+  display:block;
   background:
     linear-gradient(180deg, rgba(37,99,235,.06), rgba(37,99,235,.02)),
-    var(--surface, #fff);
+    var(--surface);
   border: 1px solid rgba(37,99,235,.12);
-  border-radius: 14px;
+  border-radius: var(--radius-md);
   padding: 12px;
-  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,.04));
+  box-shadow: var(--shadow-sm);
   transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
-  text-decoration:none;
-  color: inherit;
-  display:block;
 }
 .drwan-card:hover{
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md, 0 10px 30px rgba(0,0,0,.10));
+  box-shadow: var(--shadow-md);
   border-color: rgba(37,99,235,.22);
 }
+
 .drwan-cardTop{
   display:flex;
   align-items:center;
@@ -239,28 +116,161 @@ body{
 .drwan-iconBox{
   width: 34px;
   height: 34px;
-  border-radius: 10px;
-  background: var(--brandSoft, rgba(37,99,235,.10));
+  border-radius: var(--radius-sm);
+  background: var(--brandSoft);
   border: 1px solid rgba(37,99,235,.12);
-  color: var(--brand, #2563EB);
+  color: var(--brand);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-weight: 800;
 }
-.drwan-badge{
-  font-size: 11px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(229,231,235,1);
-  background: rgba(238,242,247,1);
-  color: rgba(107,114,128,1);
-}
-.drwan-badgeHerbs{
-  background: rgba(16,185,129,.10);
-  border-color: rgba(16,185,129,.30);
-  color: #047857;
-}
-.drwan-card h3{ margin: 10px 0 6px; font-size: 14px; }
-.drwan-card p{ margin: 0; opacity: .8; font-size: 12px; line-height: 1.45; }
 
+.drwan-card h3{
+  margin: 10px 0 6px;
+  font-size: 14px;
+}
+.drwan-card p{
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+/* Optional small chips (same vibe as news tags) */
+.drwan-chipRow{
+  margin-top: 10px;
+  display:flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.drwan-chip{
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(37,99,235,.18);
+  background: rgba(37,99,235,.06);
+  color: var(--text);
+}
+
+/* ===== Footer (keep consistent) ===== */
+.drwan-footer{
+  margin-top: 30px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* ===== Nav pieces (if your Header uses these class names) ===== */
+.drwan-nav{
+  background: rgba(255,255,255,.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.drwan-navInner{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 12px var(--padx);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+}
+.drwan-brand{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  min-width: 240px;
+}
+.drwan-logoBox{
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--brand), var(--brand2));
+  box-shadow: 0 10px 22px rgba(37,99,235,.18);
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.drwan-logoBox img{ width: 100%; height: 100%; object-fit: cover; display:block; }
+
+.drwan-brandTitle{ display:flex; flex-direction:column; line-height: 1.05; }
+.drwan-brandTitle strong{ font-size: 13px; letter-spacing: .14em; }
+.drwan-brandTitle span{ font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+.drwan-navLinks{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+.drwan-pill{
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--muted-surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 13px;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+.drwan-pill:hover{
+  transform: translateY(-1px);
+  background: var(--brandSoft);
+  border-color: rgba(37,99,235,.25);
+}
+
+.drwan-langBtns{ display:flex; gap: 8px; }
+.drwan-btn{
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+}
+.drwan-btn:hover{ border-color: rgba(37,99,235,.35); }
+.drwan-btnActive{
+  border-color: rgba(37,99,235,.75);
+  color: var(--brand);
+  background: rgba(37,99,235,.06);
+}
+
+/* Mobile nav: one row scroll */
+@media (max-width: 720px){
+  .drwan-navInner{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+  .drwan-brand{ min-width: 0; }
+  .drwan-brandTitle strong{ font-size: 15px; }
+  .drwan-brandTitle span{ font-size: 12px; line-height: 1.3; opacity: .85; }
+
+  .drwan-navLinks{
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    gap: 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding: 6px 2px;
+  }
+  .drwan-navLinks::-webkit-scrollbar{ height: 0; }
+  .drwan-pill{ flex: 0 0 auto; }
+
+  .drwan-langBtns{ justify-content: flex-end; gap: 6px; }
+  .drwan-btn{ padding: 6px 10px; font-size: 12px; }
+}
