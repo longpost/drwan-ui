@@ -202,3 +202,65 @@ body{
   }
   .drwan-btn{ padding: 6px 10px; font-size: 12px; }
 }
+
+.drwan-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 10px;
+}
+@media (max-width: 1100px){ .drwan-grid{ grid-template-columns: repeat(3, minmax(0,1fr)); } }
+@media (max-width: 900px){ .drwan-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 620px){ .drwan-grid{ grid-template-columns: 1fr; } }
+
+.drwan-card{
+  background:
+    linear-gradient(180deg, rgba(37,99,235,.06), rgba(37,99,235,.02)),
+    var(--surface, #fff);
+  border: 1px solid rgba(37,99,235,.12);
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,.04));
+  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+  text-decoration:none;
+  color: inherit;
+  display:block;
+}
+.drwan-card:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md, 0 10px 30px rgba(0,0,0,.10));
+  border-color: rgba(37,99,235,.22);
+}
+.drwan-cardTop{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 10px;
+}
+.drwan-iconBox{
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--brandSoft, rgba(37,99,235,.10));
+  border: 1px solid rgba(37,99,235,.12);
+  color: var(--brand, #2563EB);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight: 800;
+}
+.drwan-badge{
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(229,231,235,1);
+  background: rgba(238,242,247,1);
+  color: rgba(107,114,128,1);
+}
+.drwan-badgeHerbs{
+  background: rgba(16,185,129,.10);
+  border-color: rgba(16,185,129,.30);
+  color: #047857;
+}
+.drwan-card h3{ margin: 10px 0 6px; font-size: 14px; }
+.drwan-card p{ margin: 0; opacity: .8; font-size: 12px; line-height: 1.45; }
+
