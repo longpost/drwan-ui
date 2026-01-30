@@ -1,0 +1,204 @@
+/* =========================
+   DRWAN UI Theme (Style B)
+   Modern product / tool-site
+   ========================= */
+
+:root{
+  --bg: #F6F8FB;
+  --surface: #FFFFFF;
+  --muted-surface: #EEF2F7;
+
+  --text: #111827;
+  --muted: #6B7280;
+
+  --border: rgba(17,24,39,.10);
+
+  --brand: #2563EB;
+  --brand2: #0EA5A4;
+  --brandSoft: rgba(37,99,235,.08);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.05);
+  --shadow-md: 0 12px 28px rgba(0,0,0,.10);
+
+  --radius-lg: 14px;
+  --radius-md: 10px;
+  --radius-pill: 999px;
+
+  --font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Optional: consumer apps can set body background themselves,
+   but providing defaults here makes it look good out-of-box. */
+html, body { height: 100%; }
+body{
+  margin: 0;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* ---------- Header / Nav ---------- */
+.drwan-nav{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.drwan-navInner{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+}
+
+.drwan-brand{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  min-width: 240px;
+}
+
+.drwan-logoBox{
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--brand), var(--brand2));
+  box-shadow: 0 10px 22px rgba(37,99,235,.16);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+
+/* If you pass logo image: keep it clean, not “black blob” */
+.drwan-logoBox img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* 如果你logo是黑的，打开这行立刻不黑： */
+  /* filter: grayscale(100%) contrast(.9); opacity:.92; */
+}
+
+.drwan-brandTitle{
+  display:flex;
+  flex-direction:column;
+  line-height: 1.05;
+}
+.drwan-brandTitle strong{
+  font-size: 13px;
+  letter-spacing: .14em;
+}
+.drwan-brandTitle span{
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* Nav links */
+.drwan-navLinks{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+
+.drwan-pill{
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--muted-surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 13px;
+  text-decoration: none;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+.drwan-pill:hover{
+  transform: translateY(-1px);
+  background: var(--brandSoft);
+  border-color: rgba(37,99,235,.25);
+}
+
+/* Language buttons */
+.drwan-langBtns{
+  display:flex;
+  gap: 8px;
+}
+
+.drwan-btn{
+  padding: 8px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  transition: border-color .12s ease, background .12s ease, color .12s ease;
+}
+.drwan-btn:hover{
+  border-color: rgba(37,99,235,.35);
+}
+.drwan-btnActive{
+  border-color: rgba(37,99,235,.75);
+  color: var(--brand);
+  background: rgba(37,99,235,.06);
+}
+
+/* ---------- Footer ---------- */
+.drwan-footer{
+  max-width: 1100px;
+  margin: 0 auto;
+  margin-top: 34px;
+  padding: 16px 18px 40px;
+  border-top: 1px solid var(--border);
+  display:flex;
+  justify-content:space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* ---------- Mobile: header becomes 3 rows + horizontal scroll nav ---------- */
+@media (max-width: 720px){
+  .drwan-navInner{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    padding: 10px 12px;
+  }
+
+  .drwan-brand{ min-width: 0; }
+
+  .drwan-brandTitle strong{ font-size: 15px; }
+  .drwan-brandTitle span{
+    font-size: 12px;
+    line-height: 1.3;
+    opacity: .85;
+  }
+
+  .drwan-navLinks{
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding: 6px 2px;
+  }
+  .drwan-navLinks::-webkit-scrollbar{ height: 0; }
+  .drwan-pill{ flex: 0 0 auto; }
+
+  .drwan-langBtns{
+    justify-content: flex-end;
+    gap: 6px;
+  }
+  .drwan-btn{ padding: 6px 10px; font-size: 12px; }
+}
