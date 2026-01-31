@@ -1,5 +1,5 @@
 import type { Lang } from "../utils/lang.js";
-export declare function Footer(props: {
+export default function Footer(props: {
     lang?: Lang;
     disclaimerEn?: string;
     disclaimerZh?: string;
