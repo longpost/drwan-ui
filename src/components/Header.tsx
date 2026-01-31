@@ -79,26 +79,9 @@ export default function Header(props: HeaderProps) {
         )}
 
         <div className="drwan-right">
-          {rightSlot ? <div className="drwan-rightSlot">{rightSlot}</div> : null}
+  {rightSlot ? <div className="drwan-rightSlot">{rightSlot}</div> : null}
+</div>
 
-          {/* ✅ 默认不显示语言按钮，避免你子站自己也有 LangToggle 时出现“两组按钮” */}
-          {langLinks ? (
-            <div className="drwan-langBtns">
-              <a
-                className={`drwan-btn ${lang === "en" ? "drwan-btnActive" : ""}`}
-                href={langLinks.enHref}
-              >
-                English
-              </a>
-              <a
-                className={`drwan-btn ${lang === "zh" ? "drwan-btnActive" : ""}`}
-                href={langLinks.zhHref}
-              >
-                中文
-              </a>
-            </div>
-          ) : null}
-        </div>
       </div>
     </div>
   );
