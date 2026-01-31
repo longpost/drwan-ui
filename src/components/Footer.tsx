@@ -4,7 +4,7 @@ import React from "react";
 import type { Lang } from "../utils/lang.js";
 import { getCookieSafe } from "../utils/lang.js";
 
-export function Footer(props: {
+export default function Footer(props: {
   lang?: Lang;
   disclaimerEn?: string;
   disclaimerZh?: string;
